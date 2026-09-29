@@ -1,0 +1,424 @@
+.page-about main {
+    position: relative;
+    isolation: isolate;
+}
+
+.page-about main::before,
+.page-about main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.page-about main::before {
+    inset: 1rem 0 auto;
+    height: 34rem;
+    background:
+        radial-gradient(circle at 16% 14%, rgba(15, 118, 110, 0.16), transparent 24%),
+        radial-gradient(circle at 80% 18%, rgba(239, 108, 45, 0.14), transparent 20%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.38), transparent 74%);
+}
+
+.page-about main::after {
+    inset: 34rem 0 auto;
+    height: 28rem;
+    background:
+        radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.3), transparent 34%),
+        radial-gradient(circle at 76% 44%, rgba(15, 118, 110, 0.1), transparent 24%);
+}
+
+.about-hero,
+.process-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+    gap: clamp(1.4rem, 3.5vw, 2.8rem);
+}
+
+.about-hero {
+    align-items: start;
+    padding-top: clamp(1.6rem, 4vw, 3.4rem);
+}
+
+.process-shell {
+    align-items: start;
+}
+
+.about-copy,
+.workspace-copy,
+.value-card,
+.process-intro {
+    display: grid;
+    gap: 1rem;
+}
+
+.about-copy h1 {
+    max-width: 12ch;
+    font-size: clamp(1.7rem, 3.6vw, 2.75rem);
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+}
+
+.about-copy p {
+    max-width: 60ch;
+    font-size: 0.94rem;
+    line-height: 1.75;
+}
+
+.about-flags,
+.skill-pills,
+.process-pills,
+.cta-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.about-flags span,
+.skill-pills span,
+.process-pills span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    padding: 0.5rem 0.82rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(22, 32, 51, 0.08);
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.skill-pills span {
+    background: rgba(15, 118, 110, 0.08);
+}
+
+.about-note {
+    display: grid;
+    gap: 0.65rem;
+    padding: 1.15rem 1.2rem;
+    border-radius: 1.55rem;
+    background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(255, 255, 255, 0.84)),
+        var(--surface);
+    border: 1px solid rgba(15, 118, 110, 0.14);
+    box-shadow: var(--shadow-soft);
+}
+
+.about-note p:last-child,
+.photo-note p:last-child,
+.workspace-copy p:last-child,
+.snapshot-item span,
+.value-card p,
+.process-card p,
+.cta-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.about-side {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+}
+
+:is(.about-card, .snapshot-panel, .value-card, .process-intro, .process-card, .page-about .cta-banner) {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+:is(.about-card, .snapshot-panel, .value-card, .process-intro, .process-card, .page-about .cta-banner)::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 8rem;
+    height: 8rem;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.38), transparent 72%);
+    pointer-events: none;
+}
+
+.about-card {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1.15rem;
+    border-radius: 1.7rem;
+}
+
+.about-photo-card {
+    padding: 0.8rem;
+    max-width: 26rem;
+    justify-self: start;
+}
+
+.about-portrait {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 6;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 1.3rem;
+    background:
+        radial-gradient(circle at top, rgba(15, 118, 110, 0.14), transparent 58%),
+        rgba(15, 118, 110, 0.08);
+}
+
+.photo-note {
+    display: grid;
+    gap: 0.45rem;
+    padding: 0 0.2rem 0.1rem;
+}
+
+.card-label {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.workspace-card {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.workspace-copy h2 {
+    font-size: clamp(1.18rem, 1.9vw, 1.5rem);
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.workspace-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1.25rem;
+}
+
+.snapshot-section {
+    padding-top: 0.5rem;
+}
+
+.snapshot-panel {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 1.1rem;
+    border-radius: 1.85rem;
+}
+
+.snapshot-item {
+    display: grid;
+    gap: 0.45rem;
+    padding: 0.95rem;
+    border-radius: 1.35rem;
+    background: rgba(255, 255, 255, 0.46);
+    border: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.snapshot-item strong {
+    color: var(--text);
+    font-size: 0.98rem;
+}
+
+.snapshot-item span {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+.section-head {
+    display: grid;
+    gap: 0.9rem;
+    max-width: 680px;
+    margin-bottom: 0;
+}
+
+.section-head p:last-child {
+    margin-bottom: 0;
+}
+
+.section-head h2 {
+    font-size: clamp(1.42rem, 2.3vw, 1.9rem);
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.values-section,
+.process-section {
+    display: grid;
+    gap: 1.55rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.value-card {
+    padding: 1.2rem;
+    border-radius: 1.6rem;
+}
+
+.value-card h3,
+.process-card h3 {
+    color: var(--text);
+    font-size: 0.94rem;
+    line-height: 1.2;
+}
+
+.value-card p,
+.process-card p {
+    font-size: 0.9rem;
+    line-height: 1.72;
+}
+
+.process-intro {
+    padding: clamp(1.2rem, 2.8vw, 1.55rem);
+    border-radius: 1.9rem;
+    background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(255, 255, 255, 0.82)),
+        var(--surface);
+}
+
+.process-steps {
+    display: grid;
+    gap: 1rem;
+}
+
+.process-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.15rem 1rem;
+    align-items: start;
+    padding: 1.15rem;
+    border-radius: 1.6rem;
+}
+
+.process-card span:first-child {
+    grid-row: 1 / span 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
+    background: rgba(15, 118, 110, 0.12);
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    font-weight: 800;
+}
+
+.page-about .cta-banner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) auto;
+    gap: 1.2rem;
+    padding: clamp(1.45rem, 3vw, 2rem);
+    border-radius: 1.95rem;
+    background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.16), rgba(255, 255, 255, 0.72)),
+        linear-gradient(135deg, rgba(239, 108, 45, 0.12), rgba(255, 255, 255, 0.08));
+}
+
+.page-about .cta-banner h2 {
+    max-width: 15ch;
+}
+
+.cta-copy p:last-child {
+    max-width: 52ch;
+}
+
+body.dark-mode .about-flags span,
+body.dark-mode .skill-pills span,
+body.dark-mode .process-pills span,
+body.dark-mode .snapshot-item {
+    background: rgba(20, 35, 45, 0.92);
+}
+
+body.dark-mode .about-note,
+body.dark-mode .process-intro {
+    background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.16), rgba(10, 22, 29, 0.88)),
+        var(--surface);
+}
+
+@media (max-width: 980px) {
+    .about-hero,
+    .process-shell,
+    .page-about .cta-banner {
+        grid-template-columns: 1fr;
+    }
+
+    .snapshot-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .about-photo-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 780px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-about .cta-banner h2,
+    .about-copy h1 {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-copy h1 {
+        font-size: clamp(1.5rem, 5.8vw, 1.95rem);
+    }
+
+    .section-head h2,
+    .workspace-copy h2 {
+        font-size: clamp(1.12rem, 4.6vw, 1.5rem);
+    }
+
+    .about-copy p,
+    .about-note p:last-child,
+    .snapshot-item span,
+    .value-card p,
+    .process-card p,
+    .cta-copy p:last-child {
+        font-size: 0.88rem;
+    }
+
+    .about-flags span,
+    .skill-pills span,
+    .process-pills span,
+    .card-label {
+        font-size: 0.7rem;
+    }
+
+    .about-card,
+    .snapshot-panel,
+    .value-card,
+    .process-intro,
+    .process-card,
+    .page-about .cta-banner {
+        padding: 1rem;
+    }
+
+    .about-photo-card {
+        padding: 0.7rem;
+    }
+
+    .cta-actions .btn {
+        width: 100%;
+    }
+}
